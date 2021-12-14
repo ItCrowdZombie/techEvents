@@ -1,3 +1,4 @@
+@extends('components.hola')
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/5.1/examples/album/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -77,14 +78,17 @@
   </div>
 </header>
 
+
 <main>
 
 
   <div class="album py-5 bg-light">
     <div class="container">
+      
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        
+
+
       </div>
     </div>
   </div>
