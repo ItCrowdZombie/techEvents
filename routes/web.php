@@ -14,8 +14,21 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('landing');
+}); */
+
+class Event {
+    public $title = 'blabla';
+    function __construct($title)
+    {
+        $this->title=$title; 
+    }
+}
+
+Route::get('/', function(){
+    $events = [new Event ('Curso PHP'), new Event ('Curso Laravel'), new Event ('El Sergi mola')];
+    return view('landing', ['events'=>$events]);
 });
 
 Auth::routes();
