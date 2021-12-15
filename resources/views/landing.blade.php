@@ -1,4 +1,3 @@
-@extends('components.hola')
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/5.1/examples/album/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -7,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Album example · Bootstrap v5.1</title>
+    <title>Tech Events</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
@@ -69,7 +68,7 @@
     <div class="container">
       <a href="https://getbootstrap.com/docs/5.1/examples/album/#" class="navbar-brand d-flex align-items-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-        <strong>Album</strong>
+        <strong>Tech Events</strong>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -77,6 +76,8 @@
     </div>
   </div>
 </header>
+
+@include('layouts.app')
 
 
 <main>
@@ -87,7 +88,8 @@
       
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
+      
+        @include('components.eventcard')
 
       </div>
     </div>
@@ -96,13 +98,10 @@
 
 </main>
 
-<footer class="text-muted py-5">
-  <div class="container">FooooooooooooooooooooooooooooooOOTER</div>
-    
-</footer>
+@include('components.hola')
 
 
-    <script src="./Album example · Bootstrap v5.1_files/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./boostrap v5.1_files/bootstrap.bundle.min.js"></script>
 
       
   

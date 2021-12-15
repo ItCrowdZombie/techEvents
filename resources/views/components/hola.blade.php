@@ -1,8 +1,8 @@
-@extends('layouts.app')
 
-@section('content')
 
-<h1>HOLA</h1>
-    
-@endsection
+<footer class="text-muted py-5">
+    <div class="container">FooooooooooooooooooooooooooooooOOTER</div>
+      
+</footer>
+
 
