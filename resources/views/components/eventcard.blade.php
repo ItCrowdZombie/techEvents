@@ -8,6 +8,11 @@
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
             <button type="button" class="btn btn-sm btn-outline-secondary">Join</button>
+            <form action="/events/{{$event->id}}" method="post">
+              @csrf 
+              @method('DELETE')
+              <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
+            </form>
           </div>
           <small class="text-muted">9 mins</small>
         </div>
