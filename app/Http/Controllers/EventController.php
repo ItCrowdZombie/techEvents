@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
 use App\Models\Event;
+use Illuminate\Console\Scheduling\Event as SchedulingEvent;
 
 class EventController extends Controller
 {
@@ -81,6 +82,8 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        dd($id);
+        $eventToDelete = Event::findOrFail($id);
+        $eventToDelete->delete();
+        return back()->withErrors('deleted!');
     }
 }
