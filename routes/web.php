@@ -23,6 +23,8 @@ use App\Http\Controllers\EventController;
 
 Route::get('/', [LandingController::class, 'index']);
 
+Route::get('/events/create', [EventController::class, 'create']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -26,7 +26,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('eventform');
     }
 
     /**
@@ -82,8 +82,10 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        $eventToDelete = Event::findOrFail($id);
-        $eventToDelete->delete();
-        return back()->withErrors('deleted!');
+        //$eventToDelete = Event::findOrFail($id);
+        //$eventToDelete->delete();
+
+     Event::destroy($id);
+        return back();
     }
 }
