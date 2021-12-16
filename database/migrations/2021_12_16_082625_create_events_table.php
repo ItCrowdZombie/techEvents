@@ -20,10 +20,12 @@ class CreateEventsTable extends Migration
             $table->timestamp('created_at')->nullable();
             $table->string('img');
             $table->string('description');
-            $table->int('max_users');
-            $table->int('current_users');
-            $table->int('user_id');
+            $table->integer('max_users');
+            $table->integer('current_users');
+            $table->integer('user_id');
             $table->boolean('is_it_featured')->default(false);
+
+
         });
     }
 
