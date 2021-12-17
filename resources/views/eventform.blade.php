@@ -11,9 +11,9 @@
         @csrf
         <div class="col-md-6">
           <label for="inputTitle" class="form-label">Title</label>
-          <input type="text" class="form-control" id="inputTitle">
+          <input type="text" name="title" class="form-control" id="inputTitle">
         </div>
-        <div class="col-md-6">
+{{--         <div class="col-md-6">
           <label for="inputPlazas" class="form-label">plazas totales </label>
           <input type="number" class="form-control" id="inputPlazas">
         </div>
@@ -36,7 +36,7 @@
               Destacado
             </label>
           </div>
-        </div>
+        </div> --}}
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
