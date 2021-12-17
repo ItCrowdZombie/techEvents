@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\EventController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,12 +22,14 @@ use App\Http\Controllers\EventController;
 }); */
 
 
-Route::get('/', [LandingController::class, 'index']);
+Route::get('/', [LandingController::class, 'index'])->name('landing');
 
-Route::get('/events/create', [EventController::class, 'create']);
+Route::get('/events/create', [EventController::class, 'create'])->name('create');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::delete('/events/{id}', [EventController::class, 'destroy']);
+Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('destroy');
+
+Route::post('/events', [EventController::class, 'store'])->name('store');

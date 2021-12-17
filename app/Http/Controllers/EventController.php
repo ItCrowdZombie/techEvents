@@ -6,6 +6,7 @@ use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
 use App\Models\Event;
 use Illuminate\Console\Scheduling\Event as SchedulingEvent;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -37,7 +38,14 @@ class EventController extends Controller
      */
     public function store(StoreEventRequest $request)
     {
-        //
+        $stored_data= [
+            'title'=> $request->title,
+            'user_id'=> Auth::user()->id,
+
+        ];
+        Event::create($stored_data);
+        return redirect(route('landing'));
+
     }
 
     /**

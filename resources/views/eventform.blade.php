@@ -7,7 +7,8 @@
   <div class="album py-5 bg-light">
     <div class="container">
       
-      <form class="row g-3">
+      <form class="row g-3" action='{{route('store')}}'method="post">
+        @csrf
         <div class="col-md-6">
           <label for="inputTitle" class="form-label">Title</label>
           <input type="text" class="form-control" id="inputTitle">
