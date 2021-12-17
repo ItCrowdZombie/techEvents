@@ -13,7 +13,7 @@ class Event extends Model
         'title',
         'user_id',
         // 'event_date',
-        // 'img',
+        'img',
         // 'description',
         // 'max_users',
         // 'is_it_featured',

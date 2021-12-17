@@ -13,6 +13,10 @@
           <label for="inputTitle" class="form-label">Title</label>
           <input type="text" name="title" class="form-control" id="inputTitle">
         </div>
+        <div class="col-12">
+          <label for="img" class="form-label">Imagen</label>
+          <input type="url" class="form-control" name="img">
+        </div>
 {{--         <div class="col-md-6">
           <label for="inputPlazas" class="form-label">plazas totales </label>
           <input type="number" class="form-control" id="inputPlazas">
@@ -21,10 +25,7 @@
           <label for="inputDescription" class="form-label">Description</label>
           <input type="textarea" class="form-control" id="inputDescription">
         </div>
-        <div class="col-12">
-          <label for="inputImg" class="form-label">Imagen</label>
-          <input type="url" class="form-control" id="inputImg">
-        </div>
+      
         <div class="col-md-6">
           <label for="inputDate" class="form-label">Fecha del evento</label>
           <input type="datetime" class="form-control" id="inputDate">

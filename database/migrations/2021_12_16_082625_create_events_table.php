@@ -19,7 +19,7 @@ class CreateEventsTable extends Migration
             $table->foreignId('user_id')->nullable()->default(null);
             // $table->dateTime('event_date');
             $table->timestamps();
-            // $table->string('img');
+            $table->string('img');
             // $table->string('description');
             // $table->integer('max_users');
             // $table->integer('current_users');

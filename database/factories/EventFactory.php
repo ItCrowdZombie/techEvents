@@ -16,7 +16,7 @@ class EventFactory extends Factory
         return [
             'title' => $this->faker->company(),
             // 'event_date'=> $this->faker->title(),
-            // 'img'=> $this->faker->image(),
+            'img'=> $this->faker->imageUrl(),
             // 'description'=> $this->faker->text(),
             // 'max_users'=> $this->faker->title(),
             // 'is_it_featured'=> $this->faker->title(),

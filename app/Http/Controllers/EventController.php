@@ -41,6 +41,7 @@ class EventController extends Controller
         $stored_data= [
             'title'=> $request->title,
             'user_id'=> Auth::user()->id,
+            'img'=>$request->img
 
         ];
         Event::create($stored_data);
