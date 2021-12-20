@@ -8,7 +8,9 @@
         <p class="card-text">{{$event->title}}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-outline-secondary">INSCRIBIRME</button>
+            <form action="{{route ('') }}">
+             <button type="submit" class="btn btn-sm btn-outline-secondary">INSCRIBIRME</button>
+            </form>
           </div>
           <small class="text-muted">9 mins</small>
         </div>

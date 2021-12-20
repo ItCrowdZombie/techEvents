@@ -4,7 +4,8 @@ use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\EventController;
-
+use App\Http\Controllers\RegisterController;
+use Faker\Guesser\Name;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,5 +41,5 @@ Route::get('/events/{id}', [EventController::class, 'edit'])->name('edit');
 
 Route::get('/dashboard' , [LandingController::class, 'admin'])->name('dashboard');
 
-
+Route::post('/events/register/{id}', [RegisterController::class,'register'])->name('register');
 
