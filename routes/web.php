@@ -41,5 +41,5 @@ Route::get('/events/{id}', [EventController::class, 'edit'])->name('edit');
 
 Route::get('/dashboard' , [LandingController::class, 'admin'])->name('dashboard');
 
-Route::post('/events/register/{id}', [RegisterController::class,'register'])->name('register');
+Route::post('/events/join/{id}', [RegisterController::class,'join'])->name('join');
 

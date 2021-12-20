@@ -8,8 +8,15 @@
         <p class="card-text">{{$event->title}}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
-            <form action="{{route ('') }}">
-             <button type="submit" class="btn btn-sm btn-outline-secondary">INSCRIBIRME</button>
+            @php 
+            $user = Auth::user();
+            if (!$user->isJoined($event)) {$join="joinTable";}
+            if ($user->isJoined($event)) {$join="unsubscribe";}
+            @endphp
+            <form action="{{route ('join', $event->id) }}" method="POST">
+              @csrf 
+              @method('POST')
+              <button type="submit" class="btn btn-sm btn-outline-secondary">{{$join}}</button>
             </form>
           </div>
           <small class="text-muted">9 mins</small>

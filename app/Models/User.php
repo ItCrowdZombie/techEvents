@@ -46,12 +46,12 @@ class User extends Authenticatable
         return $this->hasMany(Event::class);
     }
 
-    public function registerEvent(){
+    public function joinEvent(){
         return $this->belongsToMany(Event::class, 'events_register');
     }
 
-    public function isRegistered($eventId){
-        if($this->registerEvent()->find($eventId))return true;
+    public function isJoined($eventId){
+        if($this->joinEvent()->find($eventId))return true;
         return false;
     }
 }
