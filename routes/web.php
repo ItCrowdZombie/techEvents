@@ -33,3 +33,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('destroy');
 
 Route::post('/events', [EventController::class, 'store'])->name('store');
+
+Route::put('/events/{id}', [EventController::class, 'update'])->name('update');
+
+Route::get('/events/{id}', [EventController::class, 'edit'])->name('edit');
+
+
+
+
+

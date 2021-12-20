@@ -14,6 +14,10 @@
               @method('DELETE')
               <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
             </form>
+            <form action="{{route('edit',$event->id)}}" method="get">
+              @csrf 
+              <button type="submit" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </form>
           </div>
           <small class="text-muted">9 mins</small>
         </div>
