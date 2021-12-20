@@ -87,7 +87,7 @@ class EventController extends Controller
 
         $eventToUpdate -> save();
        
-        return redirect(route('landing'));
+        return redirect(route('dashboard'));
     }
 
     /**

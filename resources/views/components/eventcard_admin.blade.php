@@ -8,7 +8,16 @@
         <p class="card-text">{{$event->title}}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-outline-secondary">INSCRIBIRME</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Join</button>
+            <form action="/events/{{$event->id}}" method="post">
+              @csrf 
+              @method('DELETE')
+              <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
+            </form>
+            <form action="{{route('edit',$event->id)}}" method="get">
+              @csrf 
+              <button type="submit" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </form>
           </div>
           <small class="text-muted">9 mins</small>
         </div>

@@ -38,7 +38,7 @@ Route::put('/events/{id}', [EventController::class, 'update'])->name('update');
 
 Route::get('/events/{id}', [EventController::class, 'edit'])->name('edit');
 
-
+Route::get('/dashboard' , [LandingController::class, 'admin'])->name('dashboard');
 
 
 
