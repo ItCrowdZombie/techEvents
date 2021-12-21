@@ -3,6 +3,8 @@
 
 @section( 'content')
 <main>
+  
+  <a href="{{ route('user_view')}}" class="text-decoration-none"> <h3>Mis cursos</h3></a>
 
   <div class="album py-5 bg-light">
     <div class="container">
