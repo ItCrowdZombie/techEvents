@@ -39,7 +39,7 @@
 
             @endphp
 
-            <input class="form-check-input" type="checkbox" name="is_it_featured" {{$check}} >
+            <input class="switch-input" type="checkbox" name="is_it_featured" {{$check}} value= 1>
             <label class="form-check-label" for="gridCheck">
               HighLighted
             </label>

@@ -23,7 +23,7 @@ class CreateEventsTable extends Migration
             $table->string('description');
             $table->integer('max_users');
             //$table->integer('current_users');
-            $table->boolean('is_it_featured')->nullable($value = true);
+            $table->boolean('is_it_featured')->default(0);
 
 
         });
