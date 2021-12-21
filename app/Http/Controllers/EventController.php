@@ -41,8 +41,11 @@ class EventController extends Controller
         $stored_data= [
             'title'=> $request->title,
             'user_id'=> Auth::user()->id,
-            'img'=>$request->img
-
+            'img'=>$request->img,
+            'event_date'=>$request->event_date,
+            'description'=>$request->description,
+            'max_users'=>$request->max_users,
+            'is_it_featured'=>$request->is_it_featured,
         ];
         Event::create($stored_data);
         return redirect(route('landing'));

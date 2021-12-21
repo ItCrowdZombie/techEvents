@@ -18,27 +18,29 @@
           <label for="img" class="form-label">Imagen</label>
           <input type="url" class="form-control" name="img" value="{{$event->img}}">
         </div>
-{{--         <div class="col-md-6">
-          <label for="inputPlazas" class="form-label">plazas totales </label>
-          <input type="number" class="form-control" id="inputPlazas">
+
+        <div class="col-md-6">
+          <label for="max_users" class="form-label">Max_Users </label>
+          <input type="number" class="form-control" name="max_users" value={{$event->max_users}}>
         </div>
         <div class="col-12">
-          <label for="inputDescription" class="form-label">Description</label>
-          <input type="textarea" class="form-control" id="inputDescription">
+          <label for="description" class="form-label">Description</label>
+          <input type="textarea" class="form-control" name="description"value={{$event->description}}>
         </div>
       
         <div class="col-md-6">
-          <label for="inputDate" class="form-label">Fecha del evento</label>
-          <input type="datetime" class="form-control" id="inputDate">
+          <label for="event_date" class="form-label">Event Date</label>
+          <input type="datetime" class="form-control" name="event_date"value={{$event->event_date}}>
         </div>
         <div class="col-12">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <input class="form-check-input" type="checkbox" name="is_it_featured" value={{$event->is_it_featured}}>
             <label class="form-check-label" for="gridCheck">
-              Destacado
+              HighLighted
             </label>
           </div>
-        </div> --}}
+        </div> 
+
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Update</button>
         </div>

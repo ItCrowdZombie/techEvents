@@ -15,11 +15,11 @@ class EventFactory extends Factory
     {
         return [
             'title' => $this->faker->company(),
-            // 'event_date'=> $this->faker->title(),
+            'event_date'=> $this->faker->dateTime(),
             'img'=> $this->faker->imageUrl(),
-            // 'description'=> $this->faker->text(),
-            // 'max_users'=> $this->faker->title(),
-            // 'is_it_featured'=> $this->faker->title(),
+            'description'=> $this->faker->text(),
+            'max_users'=> $this->faker->numberBetween(20,30),
+            'is_it_featured'=> $this->faker->boolean(),
         ];
     }
 }

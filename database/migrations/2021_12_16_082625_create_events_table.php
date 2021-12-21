@@ -17,14 +17,13 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('title');
             $table->foreignId('user_id')->nullable()->default(null);
-            // $table->dateTime('event_date');
+            $table->dateTime('event_date');
             $table->timestamps();
             $table->string('img');
-            // $table->string('description');
-            // $table->integer('max_users');
-            // $table->integer('current_users');
-            // $table->integer('user_id');
-            // $table->boolean('is_it_featured')->default(false);
+            $table->string('description');
+            $table->integer('max_users');
+            //$table->integer('current_users');
+            $table->boolean('is_it_featured')->default(false);
 
 
         });
