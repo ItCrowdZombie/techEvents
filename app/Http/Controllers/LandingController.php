@@ -23,7 +23,7 @@ class LandingController extends Controller
 
     public function user(){
         $user=Auth::user();
-        $eventsList=$user->joinEvent;
-        return view('user', ['events' => $eventsList]);
+        $userEvents=$user->joinEvent;
+        return view('user', ['events' => $userEvents]);
     }
 };
