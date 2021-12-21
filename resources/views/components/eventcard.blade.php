@@ -8,6 +8,7 @@
         <p class="card-text">{{$event->title}}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
+            @auth
             @php 
             $user = Auth::user();
             if (!$user->isJoined($event)) {$join="joinTable";}
@@ -18,6 +19,7 @@
               @method('POST')
               <button type="submit" class="btn btn-sm btn-outline-secondary">{{$join}}</button>
             </form>
+            @endauth
           </div>
           <small class="text-muted">9 mins</small>
         </div>
