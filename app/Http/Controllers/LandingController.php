@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class LandingController extends Controller
@@ -21,8 +22,8 @@ class LandingController extends Controller
     }
 
     public function user(){
-        $eventsList= Event::all();
-        
+        $user=Auth::user();
+        $eventsList=$user->joinEvent;
         return view('user', ['events' => $eventsList]);
     }
 };
