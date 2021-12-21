@@ -19,4 +19,10 @@ class LandingController extends Controller
         
         return view('dashboard', ['events' => $eventsList]);
     }
-}
+
+    public function user(){
+        $eventsList= Event::all();
+        
+        return view('user_view', ['events' => $eventsList]);
+    }
+};

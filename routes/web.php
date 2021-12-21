@@ -43,3 +43,5 @@ Route::get('/dashboard' , [LandingController::class, 'admin'])->name('dashboard'
 
 Route::post('/events/join/{id}', [RegisterController::class,'join'])->name('join');
 
+Route::get('/user' , [LandingController::class, 'user'])->name('user_view');
+
