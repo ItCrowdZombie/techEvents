@@ -91,11 +91,11 @@ class EventController extends Controller
         $eventToUpdate->event_date = $request->input('event_date');
         $eventToUpdate->description = $request->input('description');
         $eventToUpdate->max_users = $request->input('max_users');
-      /*   $eventToUpdate->is_it_featured = $request->input('is_it_featured'); */
+        $eventToUpdate->is_it_featured = $request->input('is_it_featured');
 
         $eventToUpdate -> save();
      
-     /*    return redirect(route('dashboard')); */
+     return redirect(route('dashboard'));
     }
 
     /**

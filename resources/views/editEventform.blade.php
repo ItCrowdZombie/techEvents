@@ -34,7 +34,15 @@
         </div>
         <div class="col-12">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="is_it_featured" value={{$event->is_it_featured}}>
+
+
+            @php 
+            if (!$event->is_it_featured) {$check="";}
+            if ($event->is_it_featured) {$check="checked";}
+
+            @endphp
+
+            <input class="form-check-input" type="checkbox" name="is_it_featured" {{$check}} >
             <label class="form-check-label" for="gridCheck">
               HighLighted
             </label>
