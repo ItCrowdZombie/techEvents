@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\DB;
 class LandingController extends Controller
 {
     public function index() {
-        $eventsList= Event::all();
-        
+        $eventsList= Event::orderBy('event_date','DESC')->get();
         return view('landing', ['events' => $eventsList]);
     }
 
