@@ -23,6 +23,6 @@ class LandingController extends Controller
     public function user(){
         $eventsList= Event::all();
         
-        return view('user_view', ['events' => $eventsList]);
+        return view('user', ['events' => $eventsList]);
     }
 };
