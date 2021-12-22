@@ -41,7 +41,11 @@ class EventController extends Controller
         $stored_data= [
             'title'=> $request->title,
             'user_id'=> Auth::user()->id,
-            'img'=>$request->img
+            'img'=>$request->img,
+            'event_date'=>$request->event_date,
+            'description'=>$request->description,
+            'max_users'=>$request->max_users,
+            'is_it_featured'=>$request->is_it_featured,
 
         ];
         Event::create($stored_data);
@@ -84,6 +88,11 @@ class EventController extends Controller
         $eventToUpdate = Event::findOrFail($id);
         $eventToUpdate->title= $request->input('title'); 
         $eventToUpdate->img= $request->input('img') ;
+
+        $eventToUpdate->event_date = $request->input('event_date');
+        $eventToUpdate->description = $request->input('description');
+        $eventToUpdate->max_users = $request->input('max_users');
+        $eventToUpdate->is_it_featured = $request->has('is_it_featured');
 
         $eventToUpdate -> save();
        
