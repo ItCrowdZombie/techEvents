@@ -28,7 +28,7 @@
       
         <div class="col-md-6">
           <label for="event_date" class="form-label">Event Date</label>
-          <input type="datetime" class="form-control" name="event_date">
+          <input type="datetime-local" class="form-control" name="event_date">
         </div>
         <div class="col-12">
           <div class="form-check">
