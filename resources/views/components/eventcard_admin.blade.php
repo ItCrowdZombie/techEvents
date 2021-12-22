@@ -23,6 +23,10 @@
           </div>
           <div class="form-check">
 
+            <form class="row g-3" action="{{route('updateFeatured',$event->id)}}" method="post">
+              @csrf
+              @method('PUT')
+
 
             @php 
             if (!$event->is_it_featured) {$check="";}
@@ -30,10 +34,12 @@
 
             @endphp
 
-            <input class="switch-input" value="1" type="checkbox" name="is_it_featured" {{$check}} >
+            <input class="switch-input" value="1" type="checkbox" name="is_it_featured" {{$check}}>
             <label class="form-check-label" for="gridCheck">
               HighLighted
             </label>
+            <button type="submit" class="btn btn-sm btn-outline-secondary">Destacado</button>
+            </form>
           </div>
         </div>
       </div>

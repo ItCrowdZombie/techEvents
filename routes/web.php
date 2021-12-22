@@ -45,3 +45,5 @@ Route::post('/events/join/{id}', [RegisterController::class,'join'])->name('join
 
 Route::get('/user' , [LandingController::class, 'user'])->name('user_view');
 
+Route::put('/dashboard/{id}', [EventController::class, 'updateFeatured'])->name('updateFeatured');
+

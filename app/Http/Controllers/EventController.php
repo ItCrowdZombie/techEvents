@@ -97,7 +97,22 @@ class EventController extends Controller
         $eventToUpdate -> save();
        
         return redirect(route('dashboard'));
+
     }
+
+    public function updateFeatured(Request $request, $id)
+    {
+        $eventToUpdate = Event::findOrFail($id);
+    
+        $eventToUpdate->is_it_featured = $request->has('is_it_featured');
+
+        $eventToUpdate -> save();
+       
+        return redirect(route('dashboard'));
+
+    }
+
+
 
     /**
      * Remove the specified resource from storage.
