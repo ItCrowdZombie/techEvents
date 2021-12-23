@@ -4,7 +4,10 @@
 @section( 'content')
 <main>
   
+  @auth
   <a href="{{ route('user_view')}}" class="text-decoration-none"> <h3>Mis cursos</h3></a>
+  @endauth
+  
 
   <div class="album py-5 bg-light">
     <div class="container">
