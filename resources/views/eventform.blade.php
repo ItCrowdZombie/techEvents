@@ -32,7 +32,7 @@
         </div>
         <div class="col-12">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="is_it_featured">
+            <input class="form-check-input" type="checkbox" value="1" name="is_it_featured">
             <label class="form-check-label" for="gridCheck">
               HighLighted
             </label>

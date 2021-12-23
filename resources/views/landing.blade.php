@@ -10,13 +10,15 @@
     <div class="container">
       
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        @include('components.eventcard')
-        <hr/>
-        <h3>Eventos pasados</h3>
-        <hr/>
-        @include('components.pasteventcard')
-      </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          @include('components.eventcard')
+        </div>
+          <h3>Eventos pasados</h3>
+          <hr/>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          @include('components.pasteventcard')
+        </div>
+    </div>
       
     </div>
   </div>
