@@ -12,7 +12,7 @@ $date = Carbon::now($tz);
 
 
 @foreach ($events as $event)
-@if ($event->event_date > $date)
+@if ($event->event_date < $date)
     
 
 <div class="col">
@@ -26,20 +26,6 @@ $date = Carbon::now($tz);
         <p class="card-text">{{$event->event_date}}</p>
         <p class="card-text">{{$event->max_users}}</p>
         <div class="d-flex justify-content-between align-items-center">
-          <div class="btn-group">
-            @auth
-            @php 
-            $user = Auth::user();
-            if (!$user->isJoined($event)) {$join="joinTable";}
-            if ($user->isJoined($event)) {$join="unsubscribe";}
-            @endphp
-            <form action="{{route ('join', $event->id) }}" method="POST">
-              @csrf 
-              @method('POST')
-              <button type="submit" class="btn btn-sm btn-outline-secondary">{{$join}}</button>
-            </form>
-            @endauth
-          </div>
           <small class="text-muted">9 mins</small>
         </div>
       </div>

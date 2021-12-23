@@ -6,11 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use Carbon\CarbonTimeZone;
+
 
 class LandingController extends Controller
 {
     public function index() {
         $eventsList= Event::orderBy('event_date','ASC')->get();
+       
+        // dd($date);
         return view('landing', ['events' => $eventsList]);
     }
 
