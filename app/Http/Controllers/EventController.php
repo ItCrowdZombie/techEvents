@@ -49,7 +49,7 @@ class EventController extends Controller
 
         ];
         Event::create($stored_data);
-        return redirect(route('landing'));
+        return redirect(route('dashboard'));
 
     }
 

@@ -24,13 +24,13 @@ $date = Carbon::now($tz);
         <img src="{{$event->img}}"alt="" class="card-img-top">
         <p class="card-text">{{$event->description}}</p>
         <p class="card-text">{{$event->event_date}}</p>
-        <p class="card-text">{{$event->max_users}}</p>
+        <p class="card-text">Max. users: {{$event->max_users}}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
             @auth
             @php 
             $user = Auth::user();
-            if (!$user->isJoined($event)) {$join="joinTable";}
+            if (!$user->isJoined($event)) {$join="suscribe";}
             if ($user->isJoined($event)) {$join="unsubscribe";}
             @endphp
             <form action="{{route ('join', $event->id) }}" method="POST">
@@ -40,7 +40,7 @@ $date = Carbon::now($tz);
             </form>
             @endauth
           </div>
-          <small class="text-muted">9 mins</small>
+
         </div>
       </div>
     </div>

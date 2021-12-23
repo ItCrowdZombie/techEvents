@@ -20,7 +20,7 @@ class LandingController extends Controller
     }
 
     public function admin(){
-        $eventsList= Event::orderBy('event_date','ASC')->get();
+        $eventsList= Event::orderBy('event_date','DESC')->get();
         
         return view('dashboard', ['events' => $eventsList]);
     }

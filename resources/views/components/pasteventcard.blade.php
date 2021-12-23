@@ -26,7 +26,7 @@ $date = Carbon::now($tz);
         <p class="card-text">{{$event->event_date}}</p>
         <p class="card-text">{{$event->max_users}}</p>
         <div class="d-flex justify-content-between align-items-center">
-          <small class="text-muted">9 mins</small>
+
         </div>
       </div>
     </div>
