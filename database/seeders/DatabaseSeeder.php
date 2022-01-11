@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Event;
 use App\Models\User;
+use Database\Seeders\EventSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,9 +20,14 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
             'isAdmin' => true,
         ])->create();
+
+        $user = User::factory([
+            'email'=> 'user@user.com',
+            'name' => 'user',
+        ])->create();
         
-        Event::factory(10)->create();
+       
         User::factory (10)->create();
-        
+        $this->call(EventSeeder::class);
     }
 }
