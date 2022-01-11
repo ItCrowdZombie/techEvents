@@ -43,6 +43,6 @@ class LoginController extends Controller
         if(Auth::user()->isAdmin){ 
             return '/dashboard';
         }
-        return '/landing';
+        return '/';
     }
 }

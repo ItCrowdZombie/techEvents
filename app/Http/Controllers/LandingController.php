@@ -14,7 +14,8 @@ class LandingController extends Controller
 {
     public function index() {
         $eventsList= Event::orderBy('event_date','ASC')->get();
-       
+        // $user_date = Carbon::createFromFormat('Y-m-d H:i', $utc_date, 'UTC');
+        // $user_date->setTimezone($user->timezone);
         // dd($date);
         return view('landing', ['events' => $eventsList]);
     }

@@ -13,7 +13,6 @@ $date = Carbon::now($tz);
 
 @foreach ($events as $event)
 @if ($event->event_date > $date)
-    
 
 <div class="col">
     <div class="card shadow-sm">

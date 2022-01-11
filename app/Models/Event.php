@@ -9,6 +9,8 @@ class Event extends Model
 {
     use HasFactory;
     
+    protected $dates = ['fecha']; // pasar fechas a carbon
+
     protected $fillable = [
         'title',
         'user_id',

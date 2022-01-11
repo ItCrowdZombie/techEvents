@@ -29,7 +29,7 @@ Route::get('/events/create', [EventController::class, 'create'])->name('create')
 
 Auth::routes();
 
-//Route::resource('/events', App\Http\Controllers\EventController::class);
+// Route::resource('/events', App\Http\Controllers\EventController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
