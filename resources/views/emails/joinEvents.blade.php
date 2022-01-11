@@ -8,5 +8,8 @@
 </head>
 <body>
     <h1>Hola</h1>
+    
+    {{-- <p>{{$newMail->link}}</p> --}}
+   
 </body>
 </html>

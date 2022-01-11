@@ -20,6 +20,7 @@ class EventFactory extends Factory
             'description'=> $this->faker->text(),
             'max_users'=> $this->faker->numberBetween(20,30),
             'is_it_featured'=> $this->faker->boolean(),
+            'link'=>$this->faker->url(),
         ];
     }
 }

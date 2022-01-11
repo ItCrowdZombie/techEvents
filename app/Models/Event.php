@@ -19,5 +19,6 @@ class Event extends Model
         'description',
         'max_users',
         'is_it_featured',
+        'link',
     ];
 }
