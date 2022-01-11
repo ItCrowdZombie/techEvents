@@ -30,6 +30,6 @@ class joinEvent extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.joinEvent');
+        return $this->view('emails.joinEvents');
     }
 }
