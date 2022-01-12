@@ -13,8 +13,21 @@ class RegisterController extends Controller
     public function join($eventId){
         
     $user = Auth::user();
-    if (!$user->isJoined($eventId)) {$user->joinEvent()->attach($eventId); $correo = new joinEvent; Mail::to($user->email)->send($correo); return back();} 
-    if ($user->isJoined($eventId)) {$user->joinEvent()->detach($eventId);}
+    if (!$user->isJoined($eventId)) 
+    
+    {$user->joinEvent()->attach($eventId); 
+        
+        $data = [
+            "user"=>$user,
+            "evento"=>$eventId,
+
+        ];
+
+        $correo = new joinEvent($data); 
+       
+        Mail::to($user->email)->send($correo); return back();} 
+   
+        if ($user->isJoined($eventId)) {$user->joinEvent()->detach($eventId);}
     return back();    
     }
 }

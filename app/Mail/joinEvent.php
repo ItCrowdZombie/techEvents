@@ -14,7 +14,7 @@ class joinEvent extends Mailable
     use Queueable, SerializesModels;
 
     // public $user = new User::class();
-    public $subject = "Welcome to the course";
+    public $data;
     // public $link = User::class()->link;
     // public $newMail;
 
@@ -23,9 +23,12 @@ class joinEvent extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+     
+
+    public function __construct($data)
     {
-        // $this->newMail= $newMail;
+        $this->data= $data;
     }
 
     /**

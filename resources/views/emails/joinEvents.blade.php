@@ -9,7 +9,10 @@
 <body>
     <h1>Hola</h1>
     
-    {{-- <p>{{$newMail->link}}</p> --}}
+    <div>
+        user: {{$data["user"]->name}},
+        evento: {{$data["evento"]}}
+    </div>
    
 </body>
 </html>
