@@ -7,19 +7,24 @@ use Illuminate\Support\Facades\Auth;
 use App\Mail\joinEvent;
 use Illuminate\Support\Facades\Mail;
 use App\Models\User;
+use App\Models\Event;
 
 class RegisterController extends Controller
 {
     public function join($eventId){
-        
+       
+    $event = Event::findOrFail($eventId);
     $user = Auth::user();
     if (!$user->isJoined($eventId)) 
+
+
     
     {$user->joinEvent()->attach($eventId); 
         
         $data = [
             "user"=>$user,
-            "evento"=>$eventId,
+            "evento"=>$event,
+           // "titulo"=>$title,
 
         ];
 

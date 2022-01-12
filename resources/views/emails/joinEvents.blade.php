@@ -11,7 +11,7 @@
     
     <div>
         user: {{$data["user"]->name}},
-        evento: {{$data["evento"]}}
+        evento: {{$data["evento"]->title}}
     </div>
    
 </body>
