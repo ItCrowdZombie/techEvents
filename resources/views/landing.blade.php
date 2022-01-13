@@ -2,6 +2,9 @@
 @extends('layouts.app')
 
 @section( 'content')
+
+@include('components.slider')
+
 <main>
   
   @auth
