@@ -24,7 +24,7 @@ class CreateEventsTable extends Migration
             $table->integer('max_users');
             //$table->integer('current_users');
             $table->boolean('is_it_featured')->default(0);
-            $table->string('link');
+            $table->string('link')->default(null);
             
 
 

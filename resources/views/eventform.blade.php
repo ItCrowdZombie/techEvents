@@ -25,6 +25,11 @@
           <label for="description" class="form-label">Description</label>
           <input type="textarea" class="form-control" name="description">
         </div>
+
+        <div class="col-12">
+          <label for="link" class="form-label">Event link</label>
+          <input type="url" class="form-control" name="link">
+        </div>
       
         <div class="col-md-6">
           <label for="event_date" class="form-label">Event Date</label>

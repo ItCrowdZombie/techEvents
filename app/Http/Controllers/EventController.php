@@ -46,6 +46,7 @@ class EventController extends Controller
             'description'=>$request->description,
             'max_users'=>$request->max_users,
             'is_it_featured'=>$request->is_it_featured,
+            'link'=>$request->link,
 
         ];
         Event::create($stored_data);
@@ -93,6 +94,7 @@ class EventController extends Controller
         $eventToUpdate->description = $request->input('description');
         $eventToUpdate->max_users = $request->input('max_users');
         $eventToUpdate->is_it_featured = $request->has('is_it_featured');
+        $eventToUpdate->link = $request->input('link');
 
         $eventToUpdate -> save();
        
