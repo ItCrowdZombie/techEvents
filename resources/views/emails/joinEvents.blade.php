@@ -10,8 +10,10 @@
     <h1>Hola</h1>
     
     <div>
-        user: {{$data["user"]->name}},
-        evento: {{$data["evento"]->title}}
+       <p> user: {{$data["user"]->name}}</p>
+       <p> evento: {{$data["evento"]->title}}</p>
+       <p> fecha del evento: {{$data["evento"]->event_date}}</p>
+       <p> link: <a href="{{ route('user_view')}}">{{$data["evento"]->link}}</a></p>
     </div>
    
 </body>
