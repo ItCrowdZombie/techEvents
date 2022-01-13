@@ -1,40 +1,31 @@
-<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-     <!-- Carousel indicators  
-     <ol class="carousel-indicators"> 
-        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li> 
-        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li> 
-    </ol> --> 
-
-
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-
-        @foreach ($events as $event)
-            @if ($event->is_it_featured)
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+    @foreach ($events as $event)
+            
+         @if ($event->is_it_featured)
             <div class="carousel-item active">
-                <img class="d-block w-100" src="{{$event->image}}" alt="First slide">
-              </div>
-            @endif
+                <img class="d-block w-100" src="{{$event->img}}" height="300vw"  alt="First slide">
+            </div>
+         @endif
+                 
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{{$event->img}}" alt="Second slide">
+            </div>
 
-        </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{{$event->img}}" alt="Third slide">
+            </div>
 
-        @endforeach
+    @endforeach
     </div>
 
-    
-    <!-- Wrapper for carousel items 
-    <div class="carousel-inner"> 
-        <div class="carousel-item active"> 
-
-        </div>
-    </div>  -->
-      
-    <!-- Carousel controls 
-    <a class="carousel-control-prev" data-bs-slide="prev"> 
-        <span class="carousel-control-prev-icon"></span> 
+    <!--Carousel controls--> 
+    <a class="carousel-control-prev" type="button" data-bs-slide="prev"> 
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span> 
+        <!-- <span class="visually hidden">Previous</span> -->
     </a> 
-    <a class="carousel-control-next" data-bs-slide="next"> 
-        <span class="carousel-control-next-icon"></span> 
-    </a> --> 
+    <a class="carousel-control-next" type="button" data-bs-slide="next"> 
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <!-- <span class="visually hidden">Next</span> -->
+    </a>
 </div>
