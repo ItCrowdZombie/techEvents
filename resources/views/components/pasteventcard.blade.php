@@ -1,18 +1,8 @@
 
-<?php
-use Carbon\Carbon;
-use Carbon\CarbonTimeZone;
 
 
 
-$tz = CarbonTimeZone::create('Europe/Madrid');
-$date = Carbon::now($tz);
-
-?>
-
-
-@foreach ($events as $event)
-@if ($event->event_date < $date)
+@foreach ($pastEvents as $event)
     
 
 <div class="col">
@@ -32,7 +22,6 @@ $date = Carbon::now($tz);
     </div>
 
 </div>
-@endif
 @endforeach 
  
 

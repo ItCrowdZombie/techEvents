@@ -9,19 +9,17 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Carbon\CarbonTimeZone;
 
-
 class LandingController extends Controller
 {
     public function index() {
-        $eventsList= Event::orderBy('event_date','ASC')->get();
+        $tz = CarbonTimeZone::create();
+        $date = Carbon::now($tz);
+        $futureEvents = Event::query()->where('event_date', '>', $date)->orderBy('event_date','ASC')->get();
+        $pastEvents = Event::query()->where('event_date', '<', $date)->orderBy('event_date','DESC')->get();
         $event = Event::query()->where('is_it_featured', 1)->get();
-        //dd($event);
-        //$eventHigh = $event->is_it_featured;
-        // $user_date = Carbon::createFromFormat('Y-m-d H:i', $utc_date, 'UTC');
-        // $user_date->setTimezone($user->timezone);
-        // dd($date);
-        return view('landing', ['events' => $eventsList, 'eventHigh'=> $event]);
+        return view('landing', ['futureEvents' => $futureEvents, 'pastEvents'=>  $pastEvents, 'eventHigh'=> $event]);
     }
+
 
     public function admin(){
         $eventsList= Event::orderBy('event_date','DESC')->get();
