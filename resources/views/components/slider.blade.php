@@ -19,7 +19,7 @@
                 <div class="carousel-item active">
                     <div class="d-flex justify-content-center">
                         <a href="{{$eventHigh[0]->img}}">
-                            <img class="d-block"  src="{{$eventHigh[0]->img}}" height="300vw"  alt="{{$eventHigh[0]->title}}">
+                            <img class="d-block"  src="{{$eventHigh[0]->img}}" height="500vw"  alt="{{$eventHigh[0]->title}}">
                         </a>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center">
                         <a href="{{$eventHigh[$i]->img}}">
-                            <img class="d-block" src="{{$eventHigh[$i]->img}}" height="300vw"  alt="{{$eventHigh[$i]->title}} slide">
+                            <img class="d-block" src="{{$eventHigh[$i]->img}}" height="500vw"  alt="{{$eventHigh[$i]->title}} slide">
                         </a>
                     </div>
                 </div>
