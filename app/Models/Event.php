@@ -21,4 +21,7 @@ class Event extends Model
         'is_it_featured',
         'link',
     ];
+    public function subscribedUsersCounter() {
+        
+    }
 }

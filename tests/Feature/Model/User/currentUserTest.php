@@ -24,11 +24,11 @@ class currentUserTest extends TestCase
         $user = User::factory()->create();
       
         //when (el currentuser es igual al max user)
-        $user->joinEvent()->attach($event);
+        $user->joinEvent()->attach($event->id);
 
         
         //then (el usueario no puede hacer jointevent)
 
-       $this->assertEquals($event->current_users, 3);
+       $this->assertEquals(2, $event->current_users);
     }
 }
