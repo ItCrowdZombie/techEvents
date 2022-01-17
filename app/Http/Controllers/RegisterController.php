@@ -35,4 +35,12 @@ class RegisterController extends Controller
         if ($user->isJoined($eventId)) {$user->joinEvent()->detach($eventId);}
     return back();    
     }
+
+    public function userCantSubscribe($eventId) {
+        $event = Event::findOrFail($eventId);
+      if ($event->subscribedUsersCounter() == $event->max_users) {
+        return back()->with('mensaje', 'Máximo de usuarios alcanzado, no puedes subscribirte');
+
+      }
+    }
 }

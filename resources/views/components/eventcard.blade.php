@@ -32,12 +32,20 @@ $date = Carbon::now($tz);
             if (!$user->isJoined($event)) {$join="suscribe";}
             if ($user->isJoined($event)) {$join="unsubscribe";}
             @endphp
+
+            @if (session('mensaje'))
+            <div class="alert alert-success">
+                {{ session('mensaje') }}
+            </div>
+            @endif
+        
             <form action="{{route ('join', $event->id) }}" method="POST">
               @csrf 
               @method('POST')
               <button type="submit" class="btn btn-sm btn-outline-secondary">{{$join}}</button>
             </form>
             @endauth
+            {{$event->subscribedUsersCounter()}}
           </div>
 
         </div>

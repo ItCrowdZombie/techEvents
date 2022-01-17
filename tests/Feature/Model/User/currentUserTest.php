@@ -20,15 +20,19 @@ class currentUserTest extends TestCase
     public function test_givenEventMaxUsers_whenCurrentUserEqualsMaxUser_thenUserCantSubsribe()
     {
         //given 
-        $event = Event::factory()->create( ['max_users'=>2, 'current_users' =>2]);
+        $event = Event::factory()->create( ['max_users'=>2]);
         $user = User::factory()->create();
+        $user1 = User::factory()->create();
+        
       
         //when (el currentuser es igual al max user)
         $user->joinEvent()->attach($event->id);
+        $user1->joinEvent()->attach($event->id);
+        
 
         
         //then (el usueario no puede hacer jointevent)
 
-       $this->assertEquals(2, $event->current_users);
+       $this->assertEquals(2, $event->subscribedUsersCounter());
     }
 }

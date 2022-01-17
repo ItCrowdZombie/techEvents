@@ -21,7 +21,12 @@ class Event extends Model
         'is_it_featured',
         'link',
     ];
+    public function subscribedUsers() {
+     return $this->belongsToMany(User::class, 'events_register');
+    
+    }
+
     public function subscribedUsersCounter() {
-        
+        return $this->subscribedUsers()->count();
     }
 }
