@@ -22,7 +22,7 @@ class CreateEventsTable extends Migration
             $table->string('img');
             $table->string('description');
             $table->integer('max_users');
-            //$table->integer('current_users');
+            $table->integer('current_users');
             $table->boolean('is_it_featured')->nullable();
             $table->string('link')->default(null);
             
