@@ -41,7 +41,7 @@ class EventController extends Controller
         $stored_data= [
             'title'=> $request->title,
             'user_id'=> Auth::user()->id,
-            'img'=> $request->file,
+            'img'=> $request->file('file')->store(''),
             'event_date'=>$request->event_date,
             'description'=>$request->description,
             'max_users'=>$request->max_users,
