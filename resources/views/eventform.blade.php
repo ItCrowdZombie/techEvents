@@ -7,7 +7,7 @@
   <div class="album py-5 bg-light">
     <div class="container">
       
-      <form class="row g-3" action='{{route('store')}}'method="post">
+      <form class="row g-3" action='{{route('store')}}'method="post" enctype="multipart/form-data">
         @csrf
         <div class="col-md-6">
           <label for="inputTitle" class="form-label">Title</label>
@@ -15,7 +15,10 @@
         </div>
         <div class="col-12">
           <label for="img" class="form-label">Image</label>
-          <input type="url" class="form-control" name="img">
+          <input type="file" class="form-control" name="file" id="" accept="image/*">
+          @error('file')
+            <small class="text-danger">{{$message}}</small>
+          @enderror
         </div>
          <div class="col-md-6">
           <label for="max_users" class="form-label">Max_Users </label>
