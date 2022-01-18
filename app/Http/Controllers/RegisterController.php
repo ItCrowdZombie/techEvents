@@ -36,11 +36,20 @@ class RegisterController extends Controller
     return back();    
     }
 
+    public function userTrySubscribe($eventId){
+      $event = Event::findOrFail($eventId);
+        if  ($event->subscribedUsersCounter() < $event->max_users){
+          return $this->join($eventId);
+        };
+        return $this->userCantSubscribe($eventId);
+    }
+
     public function userCantSubscribe($eventId) {
         $event = Event::findOrFail($eventId);
-      if ($event->subscribedUsersCounter() == $event->max_users) {
-        return back()->with('mensaje', 'Máximo de usuarios alcanzado, no puedes subscribirte');
-
-      }
+        $user = Auth::user();
+        if  ($event->subscribedUsersCounter() == $event->max_users && !$user->isJoined($eventId)) {
+        return back()->with('mensaje', "Máximo de usuarios alcanzado, no puedes subscribirte al curso:  {$event->title}");}
+        return $this->join($eventId);
+      
     }
 }

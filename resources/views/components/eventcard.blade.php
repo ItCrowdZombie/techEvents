@@ -12,6 +12,7 @@
         <p class="card-text">{{$event->description}}</p>
         <p class="card-text">{{$event->event_date}}</p>
         <p class="card-text">Max. users: {{$event->max_users}}</p>
+        <p class="card-text">Current users: {{$event->subscribedUsersCounter()}}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
             @auth
@@ -21,11 +22,7 @@
             if ($user->isJoined($event)) {$join="unsubscribe";}
             @endphp
 
-            @if (session('mensaje'))
-            <div class="alert alert-success">
-                {{ session('mensaje') }}
-            </div>
-            @endif
+            
         
             <form action="{{route ('join', $event->id) }}" method="POST">
               @csrf 
@@ -33,9 +30,8 @@
               <button type="submit" class="btn btn-sm btn-outline-secondary">{{$join}}</button>
             </form>
             @endauth
-            {{$event->subscribedUsersCounter()}}
+            
           </div>
-
         </div>
       </div>
     </div>

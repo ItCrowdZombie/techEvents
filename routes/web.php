@@ -43,7 +43,7 @@ Route::get('/events/{id}', [EventController::class, 'edit'])->name('edit');
 
 Route::get('/dashboard' , [LandingController::class, 'admin'])->name('dashboard')->middleware('Admin');
 
-Route::post('/events/join/{id}', [RegisterController::class,'join', 'userCantSubscribe'])->name('join');
+Route::post('/events/join/{id}', [RegisterController::class,'userTrySubscribe'])->name('join');
 
 Route::get('/user' , [LandingController::class, 'user'])->name('user_view');
 
