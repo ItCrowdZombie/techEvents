@@ -18,7 +18,7 @@
             {{-- @if($event->is_it_featured) --}}
                 <div class="carousel-item active">
                     <div class="d-flex justify-content-center">
-                        <a href="{{$eventHigh[0]->img}}">
+                        <a href="{{route ('show',$eventHigh[0]->id) }}">
                             <img class="d-block"  src="{{$eventHigh[0]->img}}" height="500vw"  alt="{{$eventHigh[0]->title}}">
                         </a>
                     </div>
@@ -29,7 +29,8 @@
             {{-- @if($event->is_it_featured) --}}
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center">
-                        <a href="{{$eventHigh[$i]->img}}">
+                        {{-- <a href="{{$eventHigh[$i]->img}}"> --}}
+                            <a href="{{route ('show', $eventHigh[$i]->id) }}">
                             <img class="d-block" src="{{$eventHigh[$i]->img}}" height="500vw"  alt="{{$eventHigh[$i]->title}} slide">
                         </a>
                     </div>
