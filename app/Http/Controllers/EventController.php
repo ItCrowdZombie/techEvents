@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateEventRequest;
 use App\Models\Event;
 use Illuminate\Console\Scheduling\Event as SchedulingEvent;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -38,17 +39,21 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(['file' => 'required|image|max:2048' ]);
+        $images = $request->file('file')->store('public/img');
+        $url = Storage::url($images);
+
         $stored_data= [
             'title'=> $request->title,
             'user_id'=> Auth::user()->id,
-            'img'=> $request->file('file')->store(''),
+            'img'=>$url,
             'event_date'=>$request->event_date,
             'description'=>$request->description,
             'max_users'=>$request->max_users,
             'is_it_featured'=>$request->is_it_featured,
             'link'=>$request->link,
         ];
-            $request->validate(['file' => 'required|image|max:2048' ]);
+           
 
         Event::create($stored_data);
         return redirect(route('dashboard'));
