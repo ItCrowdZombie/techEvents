@@ -16,9 +16,9 @@
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
 
-            <form action="{{route ('show', $event->id) }}" method="POST">
+            <form action="{{route ('show', $event->id) }}" method="GET">
               @csrf 
-              @method('POST')
+              @method('GET')
               <button type="submit" class="btn btn-sm btn-outline-secondary">View</button>
             </form>
             
