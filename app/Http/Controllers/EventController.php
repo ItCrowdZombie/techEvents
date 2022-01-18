@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
 use App\Models\Event;
+use App\Services\FileServices;
 use Illuminate\Console\Scheduling\Event as SchedulingEvent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -39,9 +40,12 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['file' => 'required|image|max:2048' ]);
-        $images = $request->file('file')->store('public/img');
-        $url = Storage::url($images);
+        // $request->validate(['file' => 'required|image|max:2048' ]);
+        // $images = $request->file('file')->store('public/img');
+        // $url = Storage::url($images);
+
+        $fileService = new FileServices();
+        $fileService-> storeFile($request);
 
         $stored_data= [
             'title'=> $request->title,
