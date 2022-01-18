@@ -49,4 +49,5 @@ Route::get('/user' , [LandingController::class, 'user'])->name('user_view');
 
 Route::put('/dashboard/{id}', [EventController::class, 'updateFeatured'])->name('updateFeatured');
 
+Route::post('/events/{id}', [EventController::class, 'show'])->name('show');
 
