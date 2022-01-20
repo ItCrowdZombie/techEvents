@@ -7,16 +7,20 @@
   <div class="album py-5 bg-light">
     <div class="container">
       
-      <form class="row g-3" action="{{route('update',$event->id)}}" method="post">
+      <form class="row g-3" action="{{route('update',$event->id)}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="col-md-6">
           <label for="inputTitle" class="form-label">Title</label>
           <input type="text" name="title" class="form-control" id="inputTitle" value="{{$event->title}}">
         </div>
+        
         <div class="col-12">
-          <label for="img" class="form-label">Imagen</label>
-          <input type="url" class="form-control" name="img" value="{{$event->img}}">
+          <label for="img" class="form-label">Image</label>
+          <input type="file" class="form-control" name="file" id="" accept="image/*" value="{{$event->img}}">
+          @error('file')
+            <small class="text-danger">{{$message}}</small>
+          @enderror
         </div>
 
         <div class="col-md-6">
