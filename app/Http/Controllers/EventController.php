@@ -99,8 +99,9 @@ class EventController extends Controller
     {   
         $eventToUpdate = Event::findOrFail($id);
         
+       
         $fileService = new FileServices();
-        $eventToUpdate->img = $fileService->deleteFile($id);
+        $fileService->deleteFile($eventToUpdate->img);
         $url = $fileService-> storeFile($request);
 
         $eventToUpdate->title= $request->input('title'); 
@@ -113,6 +114,8 @@ class EventController extends Controller
         $eventToUpdate->link = $request->input('link');
 
         $eventToUpdate -> save();
+
+        //dd($eventToUpdate);
        
         return redirect(route('dashboard'));
 
@@ -140,10 +143,16 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //$eventToDelete = Event::findOrFail($id);
-        //$eventToDelete->delete();
+        
+        $eventToDelete = Event::findOrFail($id);
+      //  dd($eventToDelete);
 
-     Event::destroy($id);
+        $fileService = new FileServices();
+        $fileService->deleteFile($eventToDelete->img);
+        
+
+        Event::destroy($id);
+
         return back();
     }
 }

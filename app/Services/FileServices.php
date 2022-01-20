@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Event;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -16,10 +17,11 @@ class FileServices {
 
     //delete-destroy
 
-    public function deleteFile($id) {
+    public function deleteFile($url) {
 
-     $id->destroy('public/img');
-        
+        $url = str_replace("storage/", "public/",$url);
+    
+        Storage::delete($url);
     }
 
     //update
