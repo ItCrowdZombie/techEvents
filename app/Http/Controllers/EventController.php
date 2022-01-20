@@ -96,10 +96,15 @@ class EventController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
         $eventToUpdate = Event::findOrFail($id);
+        
+        $fileService = new FileServices();
+        $eventToUpdate->img = $fileService->deleteFile($id);
+        $url = $fileService-> storeFile($request);
+
         $eventToUpdate->title= $request->input('title'); 
-        $eventToUpdate->img= $request->input('img') ;
+        $eventToUpdate->img= $url;
 
         $eventToUpdate->event_date = $request->input('event_date');
         $eventToUpdate->description = $request->input('description');

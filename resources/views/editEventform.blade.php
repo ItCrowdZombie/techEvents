@@ -17,7 +17,7 @@
         
         <div class="col-12">
           <label for="img" class="form-label">Image</label>
-          <input type="file" class="form-control" name="file" id="" accept="image/*" value="{{$event->img}}">
+          <input type="file" class="form-control" placeholder="{{$event->img}}" name="file" id="" accept="image/*" value="{{$event->img}}">
           @error('file')
             <small class="text-danger">{{$message}}</small>
           @enderror

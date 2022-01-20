@@ -4,8 +4,9 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Storage;
 
-class FileServices {
 
+class FileServices {
+    //store
     public function storeFile($request) {
         $request->validate(['file' => 'required|image|max:2048' ]);
         $images = $request->file('file')->store('public/img');
@@ -15,7 +16,14 @@ class FileServices {
 
     //delete-destroy
 
-    //update
+    public function deleteFile($id) {
 
-    //store
+     $id->destroy('public/img');
+        
+    }
+
+    //update
+  
+
+    
 }
