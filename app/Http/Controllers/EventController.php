@@ -45,7 +45,7 @@ class EventController extends Controller
         // $url = Storage::url($images);
 
         $fileService = new FileServices();
-        $fileService-> storeFile($request);
+        $url = $fileService-> storeFile($request);
 
         $stored_data= [
             'title'=> $request->title,
