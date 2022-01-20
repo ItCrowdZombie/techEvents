@@ -35,4 +35,6 @@ class currentUserTest extends TestCase
 
        $this->assertEquals(2, $event->subscribedUsersCounter());
     }
-}
+    
+    
+} 
