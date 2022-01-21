@@ -1,66 +1,73 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Consultorio
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Introducción 🍀
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> Un colectivo de desarrollo de software quiere crear una aplicación web para gestionar sus eventos online como talleres, masterclass o webinars.
+Los usuarios podrán ver la descripción de un evento, apuntarse y desapuntarse. Podrán ver la lista de los eventos a los que se han apuntado. El administrador debe tener las herramientas para la gestión (CRUD) de los eventos.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+> El proyecto se debe realizar en equipos Scrum en 3 sprints de 1 semana.
+>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Objetivos de la práctica🔩:
 
-## Learning Laravel
+- Cómo funciona en el framework la creación de Modelos, Vistas y Controladores.
+- Que és y las bondades de: php artisan (CLI)
+- Implementaremos un router y el uso de los métodos Http.
+- Veremos como usar cositas relacionadas con la base de datos SQL (Migraciones, Factories, Seeders, el ORM eloquent y el diseño de DB)
+- Cómo crear un CRUD básico en Laravel
+- Cómo usar la autenticación y autorización mediante (Auth y middleware)
+- Veremos como funciona el sistema de plantillas en el frontend con Blade (componentes anónimos, layouts y componentes Liveware)
+- Intentaremos empezar con el testing con phpUnit
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Requisitos Funcionales🚗
+    
+- En portada la aplicación tendrá un slider con las masterclasses destacadas. éstas serán seleccionables por el administrador.
+- En portada habrá una lista paginada con todos los eventos ordenados del más cercano al más lejano en el tiempo.
+- Los eventos incluirán como mínimo: título, fecha/hora, número máximo de participantes, descripción y una imagen.
+- Los eventos pasados se deben mantener en la lista pero identificables como no disponibles.
+- Los usuarios deberán registrarse para apuntarse a un evento. Una vez apuntados no podran volver a hacerlo.
+- Al apuntarse a un evento recibirán un email (empresarial - html ) con el link (zoom, meets, etc..) en donde se va a realizar, así como recordando el título del evento, la hora y el día.
+- Los usuarios podrán ver en una página la lista de los eventos a los que están registrados.
+- El administrador podrá hacer CRUD de los eventos.
+- Cuando un evento esté lleno (máximo número de participantes) nadie podrá registrarse.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Extra:
 
-## Laravel Sponsors
+- Para que apps de terceros usen nuestros datos abriremos una API con un endpoint '*/api/events*' donde enviaremos una lista paginada de todos los eventos
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+##Requisitos no funcionales:
 
-### Premium Partners
+- La web deberá estar en *deploy* aunque esté en desarrollo.
+- Todos los requisitos y casos de usuario deberán estar testeados (tests de aceptación)
+- Se deberá usar Laravel.
+- El envío de el email se deberá hacer usando un sistema de colas.
+- Para el frontend se deben usar componentes de blade y/o Liveware o Js.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
 
-## Contributing
+## Roles🎯
+* Scrum master: Sergi Fuentes
+* Product owner: Lucas Rodríguez
+* Developers team: Lucas Rodríguez, Mayu Ruiz, Melisa Manoni, Carmen Rubio, Sergi Fuentes y Rita Solà. 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## Repositorio de GitHub 🚀
+Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu ordenador local para propósitos de desarrollo y pruebas:
+https://github.com/ItCrowdZombie/techEvents
+Abre la terminal y ejecuta: git clone para descargar el proyecto.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Construido con 🛠️
+* Frontend: HTML, Bootstrap.
+* Backend: PHP
+* Libreria: Carbon
+* Bases de datos: MySQL
+* Xampp / Mamp y Composer
+* Mailtrap
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Gratitud 🎁
+* Comenta a otros sobre este proyecto 📢 .
+* Apoya mis proyectos 🤓 .
+* ⌨️ con ❤️ por Lucas Rodríguez, Mayu Ruiz, Melisa Manoni, Sergi Fuentes, Carmen Rubio y Rita Solà. 
