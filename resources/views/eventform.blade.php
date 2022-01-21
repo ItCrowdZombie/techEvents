@@ -38,12 +38,14 @@
           <label for="event_date" class="form-label">Event Date</label>
           <input type="datetime-local" class="form-control" name="event_date" required>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="highlighted">
-          <label class="form-check-label" for="gridCheck">
-            HighLighted
-          </label>
-        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1" name="is_it_featured">
+            <label class="form-check-label" for="gridCheck">
+              HighLighted
+            </label>
+          </div>
+        </div> 
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
