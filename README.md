@@ -36,7 +36,7 @@ Extra:
 
 - Para que apps de terceros usen nuestros datos abriremos una API con un endpoint '*/api/events*' donde enviaremos una lista paginada de todos los eventos
 
-##Requisitos no funcionales:
+## Requisitos no funcionales:
 
 - La web deberá estar en *deploy* aunque esté en desarrollo.
 - Todos los requisitos y casos de usuario deberán estar testeados (tests de aceptación)
