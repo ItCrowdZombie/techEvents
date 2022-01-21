@@ -60,6 +60,7 @@ Abre la terminal y ejecuta: git clone para descargar el proyecto.
 
 ## Construido con 🛠️
 * Frontend: HTML, Bootstrap.
+* Framework: Laravel
 * Backend: PHP
 * Libreria: Carbon
 * Bases de datos: MySQL
