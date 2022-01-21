@@ -21,6 +21,7 @@ class EventSeeder extends Seeder
         'img'=> "https://www.headsem.com/wp-content/uploads/2018/02/cursos-programaci%C3%B3n-para-juegos.jpg",
         'title'=> "Programación para juegos",
         'description'=> "Sumérgete en el fantabuloso mundo de los gamers en modo pro!!!",
+        'max_users'=> 0,
 
         ])->create();
 
@@ -29,6 +30,7 @@ class EventSeeder extends Seeder
             'img'=> "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/styles/480/public/media/image/2016/02/150769-programacion-gratis-espanol.jpg?itok=YiDHV5TQ",
             'title'=> "Programación tomando un cafetito",
             'description'=> "Sumérgete en el maravilludo espacio de los cafeteros programadores!!!",
+            'max_users'=> 1,
     
             ])->create();
 

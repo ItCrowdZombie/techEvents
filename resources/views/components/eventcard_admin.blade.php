@@ -8,9 +8,15 @@
         <img src="{{$event->img}}"alt="" class="card-img-top">
         <p class="card-text">{{$event->description}}</p>
         <p class="card-text">{{$event->event_date}}</p>
-        <p class="card-text">{{$event->max_users}}</p>
+        <p class="card-text">Max. users: {{$event->max_users}}</p>
+        <p class="card-text">Current users: {{$event->subscribedUsersCounter()}}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
+          <form action="{{route ('show', $event->id) }}" method="GET">
+            @csrf 
+            @method('GET')
+            <button type="submit" class="btn btn-sm btn-outline-secondary">View</button>
+          </form>
             <form action="{{route('edit',$event->id)}}" method="get">
               @csrf 
               <button type="submit" class="btn btn-sm btn-outline-secondary">Edit</button>
@@ -21,26 +27,18 @@
               <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
             </form>
           </div>
-          <div class="form-check">
+          @php
+            if (!$event->is_it_featured) {$star='fa fa-star-o';}
+            if ($event->is_it_featured) {$star='fa fa-star';}
+          @endphp
 
-            <form class="row g-3" action="{{route('updateFeatured',$event->id)}}" method="post">
-              @csrf
-              @method('PUT')
-
-
-            @php 
-            if (!$event->is_it_featured) {$check="";}
-            if ($event->is_it_featured) {$check="checked";}
-
-            @endphp
-
-            <input class="switch-input" value="1" type="checkbox" name="is_it_featured" {{$check}}>
-            <label class="form-check-label" for="gridCheck">
-              HighLighted
-            </label>
-            <button type="submit" class="btn btn-sm btn-outline-secondary">Destacado</button>
-            </form>
-          </div>
+          <small class="text-muted loveButton">
+            <span class="btn btn-warning" aria-hidden="true">
+              <a href="{{route('updateFeatured',$event->id)}}">
+                  <i class= "{{$star}}" aria-hidden="true" name= "highlighted" style="color: rgb(238, 255, 0)"></i>
+              </a>
+            </span>
+          </small>
         </div>
       </div>
     </div>

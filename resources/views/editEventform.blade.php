@@ -42,20 +42,18 @@
           <input type="datetime-local" class="form-control" name="event_date"value={{$event->event_date}} required>
         </div>
         <div class="col-12">
-          <div class="form-check">
+          @php
+            if (!$event->is_it_featured) {$star='fa fa-star-o';}
+            if ($event->is_it_featured) {$star='fa fa-star';}
+          @endphp
 
-            @php 
-            if (!$event->is_it_featured) {$check="";}
-            if ($event->is_it_featured) {$check="checked";}
-
-            @endphp
-
-            <input class="switch-input" value="1" type="checkbox" name="is_it_featured" {{$check}} >
-            <label class="form-check-label" for="gridCheck">
-              HighLighted
-            </label>
-
-          </div>
+          <small class="text-muted loveButton">
+            <span class="btn btn-warning" aria-hidden="true">
+              <a href="{{route('updateFeatured',$event->id)}}">
+                  <i class= "{{$star}}" aria-hidden="true" name= "highlighted" style="color: rgb(238, 255, 0)"></i>
+              </a>
+            </span>
+          </small>
         </div> 
 
         <div class="col-12">

@@ -47,7 +47,9 @@ Route::post('/events/join/{id}', [RegisterController::class,'userTrySubscribe'])
 
 Route::get('/user' , [LandingController::class, 'user'])->name('user_view');
 
-Route::put('/dashboard/{id}', [EventController::class, 'updateFeatured'])->name('updateFeatured');
+//Route::put('/dashboard/{id}', [EventController::class, 'updateFeatured'])->name('updateFeatured');
 
 Route::get('/events/show/{id}', [EventController::class, 'show'])->name('show');
+
+Route::get('/dashboard/highlight/{id}' , [EventController::class , 'highLightToggle'])->name('updateFeatured');
 

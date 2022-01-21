@@ -39,12 +39,18 @@
           <input type="datetime-local" class="form-control" name="event_date" required>
         </div>
         <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="1" name="is_it_featured">
-            <label class="form-check-label" for="gridCheck">
-              HighLighted
-            </label>
-          </div>
+          @php
+            if (!$event->is_it_featured) {$star='fa fa-star-o';}
+            if ($event->is_it_featured) {$star='fa fa-star';}
+          @endphp
+
+          <small class="text-muted loveButton">
+            <span class="btn btn-warning" aria-hidden="true">
+              <a href="{{route('updateFeatured',$event->id)}}">
+                  <i class= "{{$star}}" aria-hidden="true" name= "highlighted" style="color: rgb(238, 255, 0)"></i>
+              </a>
+            </span>
+          </small>
         </div> 
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Submit</button>

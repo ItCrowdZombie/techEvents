@@ -23,8 +23,7 @@
                         </a>
                     </div>
                 </div>
-        @endif 
-        @if(!empty ($eventHigh))
+        
         @for($i=1; $i < count($eventHigh);$i++)    
             {{-- @if($event->is_it_featured) --}}
                 <div class="carousel-item">

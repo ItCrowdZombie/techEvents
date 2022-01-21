@@ -155,4 +155,24 @@ class EventController extends Controller
 
         return back();
     }
+
+    public function highLightToggle (Request $request, $id) {
+
+        $event = Event::findOrFail($id);
+        $request->all($event->id);
+
+        switch ($event->is_it_featured) {
+            case '0':
+                $event->is_it_featured = 1;
+                break;
+            
+            case '1':
+                $event->is_it_featured = 0;
+                break;
+        }
+        
+        $event->save();
+        
+        return back();
+    }
 }

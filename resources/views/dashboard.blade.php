@@ -3,7 +3,12 @@
 
 @section( 'content')
 <main>
-  <a href="{{ route('create')}}" class="text-decoration-none"> <h3>Crear Evento</h3> </a>
+  <a href="{{ route('create')}}" class="text-decoration-none"> <h3>Create Event</h3> </a>
+
+  
+  {{-- @include('components.searchButton') --}}
+
+
   <div class="album py-5 bg-light">
     <div class="container">
       

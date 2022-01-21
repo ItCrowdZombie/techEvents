@@ -8,9 +8,14 @@
 <main>
   
   @auth
-  <a href="{{ route('user_view')}}" class="text-decoration-none"> <h3>Mis cursos</h3></a>
-  @endauth
+    <a href="{{ route('user_view')}}" class="text-decoration-none"> <h3>Mis cursos</h3></a>
   
+  
+  @if (Auth::user()->isAdmin)     
+    <a href="{{ route('dashboard')}}" class="text-decoration-none"> <h3>Dashboard</h3></a>
+  @endif
+  @endauth
+        
   @if (session('mensaje'))
       <div class="alert alert-danger">
           {{ session('mensaje') }}
